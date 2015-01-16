@@ -13,13 +13,52 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-success"><center><button type="button" class="btn btn-success btn-lg btn-block"><h2>Calculator</h2></button></center>
-                <hr>
+
                 <div class="panel-body">
                     <form method="post" action="function.php">
 
 
                         <center>
                             <!--<p>Alert Messages !!!</p>-->
+
+                            <?php if(isset($_SESSION['msg']))
+                            {?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Warring!!!</strong> <?php echo $_SESSION['msg']; ?>
+                                </div>
+                            <?php
+                            }?>
+
+                            <?php if(isset($_SESSION['msg1']))
+                            {?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Warring!!!</strong> <?php echo $_SESSION['msg1']; ?>
+                                </div>
+                            <?php
+                            }?>
+
+                            <?php if(isset($_SESSION['msg2']))
+                            {?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Warring!!!</strong> <?php echo $_SESSION['msg2']; ?>
+                                </div>
+                            <?php
+                            }?>
+
+                            <?php if(isset($_SESSION['msg3']))
+                            {?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Warring!!!</strong> <?php echo $_SESSION['msg3']; ?>
+                                </div>
+                            <?php
+                            }?>
+
+
+
 
                             <?php if(isset($_SESSION['sum']))
                             {?>
