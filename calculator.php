@@ -8,25 +8,79 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-
+<br><br><br><br>
 <section class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-success"><center><h2>Calculator</h2></center>
                 <div class="panel-body">
                     <form method="post" action="function.php">
 
 
                         <center>
-                            <p>Alert Messages !!!</p>
+                            <!--<p>Alert Messages !!!</p>-->
+
                             <?php if(isset($_SESSION['sum']))
                             {?>
                                 <div class="alert alert-success alert-dismissible" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                                    <strong>Well Done!!</strong> Your Addition Operation Successfully Completed.
                                 </div>
-                            <?php echo $_SESSION['sum'];
+                            <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['sum']; ?>">
+                            <?php
                             }?>
+
+
+                            <?php if(isset($_SESSION['suberror']))
+                            {?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Warring!!!</strong> <?php echo $_SESSION['suberror']; ?>
+                                </div>
+                            <?php
+                            }?>
+
+                            <?php if(isset($_SESSION['sub']))
+                            {?>
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Well Done!!</strong> Your Subtraction Operation Successfully Completed.
+                                </div>
+                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['sub']; ?>">
+                            <?php
+                            }?>
+
+
+
+                            <?php if(isset($_SESSION['diverror']))
+                            {?>
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Warring!!!</strong> <?php echo $_SESSION['diverror']; ?>
+                                </div>
+                            <?php
+                            }?>
+
+                            <?php if(isset($_SESSION['div']))
+                            {?>
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Well Done!!</strong> Your Division Operation Successfully Completed.
+                                </div>
+                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['div']; ?>">
+                            <?php
+                            }?>
+
+                            <?php if(isset($_SESSION['multi']))
+                            {?>
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>Well Done!!</strong> Your Multiplication Operation Successfully Completed.
+                                </div>
+                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['multi']; ?>">
+                            <?php
+                            }?>
+
                         </center>
 
 
@@ -36,14 +90,10 @@
                         <center><label>Enter Second Number: </label><input type="number" name="number2"></center>
                         <br>
                         <center>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="operation" value="add" checked>Addition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="operation" value="sub">Subtraction&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="operation" value="div">Division&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="operation" value="multi">Multiplication
-                                </label>
-                            </div>
+                            <input type="radio" name="operation" value="add">Addition
+                            <input type="radio" name="operation" value="sub">Subtraction
+                            <input type="radio" name="operation" value="div">Division
+                            <input type="radio" name="operation" value="multi">Multiplication
                         </center>
                         <br>
                         <center><input type="submit" name="submit" value="Calculate"></center>
