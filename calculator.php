@@ -11,8 +11,9 @@
 <br><br><br><br>
 <section class="container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="panel panel-success"><center><h2>Calculator</h2></center>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-success"><center><button type="button" class="btn btn-success btn-lg btn-block"><h2>Calculator</h2></button></center>
+                <hr>
                 <div class="panel-body">
                     <form method="post" action="function.php">
 
@@ -26,7 +27,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <strong>Well Done!!</strong> Your Addition Operation Successfully Completed.
                                 </div>
-                            <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['sum']; ?>">
+                            <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['sum']; ?>"><br>
                             <?php
                             }?>
 
@@ -46,7 +47,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <strong>Well Done!!</strong> Your Subtraction Operation Successfully Completed.
                                 </div>
-                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['sub']; ?>">
+                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['sub']; ?>"><br>
                             <?php
                             }?>
 
@@ -67,7 +68,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <strong>Well Done!!</strong> Your Division Operation Successfully Completed.
                                 </div>
-                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['div']; ?>">
+                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['div']; ?>"><br>
                             <?php
                             }?>
 
@@ -77,7 +78,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     <strong>Well Done!!</strong> Your Multiplication Operation Successfully Completed.
                                 </div>
-                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['multi']; ?>">
+                                <?php echo "Your Result is: "?><input type="text" value="<?php echo $_SESSION['multi']; ?>"><br>
                             <?php
                             }?>
 
@@ -86,7 +87,6 @@
 
 
                         <center><label>Enter First Number: </label><input type="number" name="number1"></center>
-                        <br>
                         <center><label>Enter Second Number: </label><input type="number" name="number2"></center>
                         <br>
                         <center>
@@ -96,7 +96,12 @@
                             <input type="radio" name="operation" value="multi">Multiplication
                         </center>
                         <br>
-                        <center><input type="submit" name="submit" value="Calculate"></center>
+                        <center>
+                            <input type="reset" value="Reset">
+                            <input type="submit" name="submit" value="Calculate">
+                        </center>
+                        <hr>
+                        <center><a href="calculator.php" class="btn btn-primary btn-lg active" role="button">Reload</a></center>
                     </form>
                 </div>
             </div>
