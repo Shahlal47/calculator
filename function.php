@@ -9,7 +9,7 @@ $number2 = $_POST['number2'];
 //echo $operation;
 //echo $number1;
 //echo $number2;
-
+//exit;
 
 if($_SERVER['REQUEST_METHOD'] == "GET")
 {
@@ -52,7 +52,7 @@ else{
 
         if($number1<$number2)
         {
-            $_SESSION['suberror'] = "Your First Number Must Be Grater Than Second Number.";
+            $_SESSION['suberror'] = "Your First Number Should Be Grater Than Second Number.";
             header("location:calculator.php");
         }
         if($number1>$number2)
@@ -61,8 +61,6 @@ else{
             header("location:calculator.php");
         }
     }
-
-
 
 
     if(isset($operation) && ($_POST['operation']) == "div"){
@@ -78,7 +76,6 @@ else{
             header("location:calculator.php");
         }
     }
-
 
 
     if(isset($operation) && ($_POST['operation']) == "multi"){
